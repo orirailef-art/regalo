@@ -246,10 +246,13 @@ body {
 
 /*Regalo De Cumpleaños*/
 .caja {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+
   position: relative;
-  left: -20px;      
-  width: 150px; /* ancho del objeto */
-  height: 180px; /* alto total (caja + cinta + estrellas)*/
+  width: 150px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
