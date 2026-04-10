@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Acceso al sistema</title>
+
+<style>
+    body {
+        background: black;
+        color: #00ff88;
+        font-family: monospace;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    #card {
+        display: none;
+        background: #111;
+        border: 2px solid #00ff88;
+        padding: 30px;
+        border-radius: 15px;
+        width: 300px;
+        margin: auto;
+    }
+
+    button {
+        background: #00ff88;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-weight: bold;
+    }
+
+    #texto {
+        white-space: pre-line;
+    }
+</style>
+</head>
+
+<body>
+
+<h2 id="texto"></h2>
+
+<div id="card">
+    <h3>🎉 ACCESO CONCEDIDO 🎉</h3>
+    <p>Has desbloqueado:</p>
+    <h2>🍔 Hamburguesa todo pago 🍔</h2>
+    <p>Invita: TU NOMBRE</p>
+</div>
+
+<script>
+const texto = document.getElementById("texto");
+
+const mensajes = [
+    "Iniciando sistema...",
+    "Cargando datos...",
+    "Verificando usuario...",
+    "Acceso en proceso...",
+    "Acceso concedido."
+];
+
+let i = 0;
+
+function mostrarMensajes() {
+    if (i < mensajes.length) {
+        texto.innerHTML += mensajes[i] + "\n";
+        i++;
+        setTimeout(mostrarMensajes, 1200);
+    } else {
+        document.getElementById("card").style.display = "block";
+    }
+}
+
+mostrarMensajes();
+</script>
+
+</body>
+</html>
