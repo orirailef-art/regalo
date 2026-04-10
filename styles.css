@@ -32,16 +32,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 520px;
+  width: 700px;
   gap: 20px;
   position: relative;
   bottom: -50px;
 }
 
+
 /* Mesa */
 .soporte {
   position: relative;
-  width: 500px;
+  width: 700px;
   left: -20px;
   bottom: -50px;
   height: 20px;
@@ -247,8 +248,8 @@ body {
 /*Regalo De Cumpleaños*/
 .caja {
   display: flex;
+  gap: 15px;
   align-items: flex-end;
-  gap: 10px;
 
   position: relative;
   width: 150px;
@@ -493,17 +494,13 @@ body {
 
 /*Mensaje*/
 .happy-birthday {
-    position: absolute;
-    top: -150px; /* Ajusta la distancia vertical desde la torta */
-    left: 20%;
-    transform: translateX(-50%);
-    font-family: 'Pacifico', cursive;
-    font-size: 40px;
-    color: #ff4d6d; 
-    user-select: none;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-    animation: flotar 2s ease-in-out infinite,
-               brillo 1.5s infinite;
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  color: #ff4d6d;
 }
 
 /* Modal */
