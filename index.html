@@ -2,78 +2,139 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Acceso al sistema</title>
+<title>Sistema de Acceso</title>
 
 <style>
     body {
-        background: black;
-        color: #00ff88;
-        font-family: monospace;
-        text-align: center;
-        padding-top: 100px;
+        margin: 0;
+        background: #0a0a0a;
+        color: #00ff9c;
+        font-family: "Courier New", monospace;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    #terminal {
+        width: 400px;
+        max-width: 90%;
+    }
+
+    #text {
+        min-height: 120px;
+        white-space: pre-line;
+    }
+
+    .bar-container {
+        width: 100%;
+        height: 10px;
+        background: #222;
+        margin-top: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .bar {
+        height: 100%;
+        width: 0%;
+        background: #00ff9c;
+        transition: width 0.3s;
     }
 
     #card {
         display: none;
+        margin-top: 30px;
         background: #111;
-        border: 2px solid #00ff88;
-        padding: 30px;
+        border: 1px solid #00ff9c;
+        padding: 25px;
         border-radius: 15px;
-        width: 300px;
-        margin: auto;
+        text-align: center;
+        animation: fadeIn 1s ease forwards;
     }
 
     button {
-        background: #00ff88;
-        border: none;
+        margin-top: 15px;
         padding: 10px 20px;
-        margin-top: 20px;
-        cursor: pointer;
+        background: #00ff9c;
+        border: none;
         border-radius: 8px;
+        cursor: pointer;
         font-weight: bold;
     }
 
-    #texto {
-        white-space: pre-line;
+    @keyframes fadeIn {
+        from {opacity: 0; transform: scale(0.9);}
+        to {opacity: 1; transform: scale(1);}
     }
 </style>
 </head>
 
 <body>
 
-<h2 id="texto"></h2>
+<div id="terminal">
+    <div id="text"></div>
+
+    <div class="bar-container">
+        <div class="bar" id="bar"></div>
+    </div>
+</div>
 
 <div id="card">
-    <h3>🎉 ACCESO CONCEDIDO 🎉</h3>
-    <p>Has desbloqueado:</p>
-    <h2>🍔 Hamburguesa todo pago 🍔</h2>
+    <h2>🎉 ACCESO CONCEDIDO 🎉</h2>
+    <p>Usuario validado correctamente</p>
+    <h1>🍔 Hamburguesa todo pago 🍔</h1>
     <p>Invita: TU NOMBRE</p>
+    <button onclick="alert('Coordinamos cuándo vamos 😎')">Reclamar</button>
 </div>
 
 <script>
-const texto = document.getElementById("texto");
-
 const mensajes = [
     "Iniciando sistema...",
-    "Cargando datos...",
-    "Verificando usuario...",
-    "Acceso en proceso...",
-    "Acceso concedido."
+    "Cargando módulos...",
+    "Detectando usuario...",
+    "Validando credenciales...",
+    "Acceso autorizado"
 ];
 
-let i = 0;
+const text = document.getElementById("text");
+const bar = document.getElementById("bar");
 
-function mostrarMensajes() {
+let i = 0;
+let progreso = 0;
+
+function escribirLinea(linea, callback) {
+    let j = 0;
+    function escribir() {
+        if (j < linea.length) {
+            text.innerHTML += linea[j];
+            j++;
+            setTimeout(escribir, 30);
+        } else {
+            text.innerHTML += "\n";
+            callback();
+        }
+    }
+    escribir();
+}
+
+function siguienteMensaje() {
     if (i < mensajes.length) {
-        texto.innerHTML += mensajes[i] + "\n";
-        i++;
-        setTimeout(mostrarMensajes, 1200);
+        escribirLinea(mensajes[i], () => {
+            i++;
+            progreso += 20;
+            bar.style.width = progreso + "%";
+            setTimeout(siguienteMensaje, 500);
+        });
     } else {
-        document.getElementById("card").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("card").style.display = "block";
+        }, 800);
     }
 }
 
-mostrarMensajes();
+siguienteMensaje();
 </script>
 
 </body>
