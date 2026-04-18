@@ -42,7 +42,7 @@
     left: 50% !important;
     transform: translateX(-50%);
     bottom: 165px;
-    width: 45px; /* Más grande para que sea fácil de tocar con el dedo */
+    width: 50px; /* Más grande para que sea fácil de tocar con el dedo */
     height: 65px;
   }
 
