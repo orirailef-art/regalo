@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: rgba(255, 182, 193, 1);
+  background-color: rgba(182, 211, 255);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,7 +208,7 @@ body {
   opacity: 0.95;
   z-index: 10000;
   cursor: pointer;
-    pointer-events: auto;
+
 }
 
 @keyframes flama {
@@ -231,9 +231,9 @@ body {
     position: fixed;
     inset: 0;
     /* 0.9 es casi oscuro total, pero deja intuir el fondo como en tu foto ideal */
-    background-color: #000000; 
+    background-color: rgb (0,0,0); 
     opacity: 1;
-    z-index: 0000; /* Un número alto, pero menor que la llama */
+    z-index: 999; /* Un número alto, pero menor que la llama */
     transition: opacity 1.5s ease;
     pointer-events: auto; /* Esto permite que puedas hacer clic en lo que hay detrás */
 }
@@ -510,10 +510,12 @@ body {
     z-index: 9000;            /* Por encima del negro, debajo de la llama */
     font-family: 'Pacifico', cursive;
     font-size: 60px;
-    color: #ff4d6d;
+    color: #3126fa;
+    user-select: none;
     opacity: 0;               /* Empieza invisible */
-    transition: opacity 1s ease;
-    pointer-events: none;     /* Que el texto no moleste al hacer clic */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    animation: flotar 2s ease-in-out infinite,
+               brillo 1.5s infinite;   /* Que el texto no moleste al hacer clic */
 } /* <-- Aquí faltaba esta llave en tu código */
 
 /* --- MODAL --- */
