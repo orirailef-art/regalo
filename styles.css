@@ -41,7 +41,7 @@ body {
 /* Mesa */
 .soporte {
   position: relative;
-  width: 500px;
+  width: 800px;
   left: -20px;
   bottom: -50px;
   height: 20px;
@@ -256,13 +256,15 @@ body {
 }
 
 /* Elementos de la caja */
-.cinta-de-regalo,
+
+.cinta-de-regalo 
 .cinta-de-regalo-izquierda,
 .cinta-de-regalo-derecha,
 .cinta-de-regalo-centro,
 .regalos,
 .regalo-sombra,
-.regalo {
+
+  .regalo {
   position: absolute;
 }
 
