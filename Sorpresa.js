@@ -1,22 +1,25 @@
 // Carta
 const tapas = document.querySelectorAll(".regalo");
 const cajas = document.querySelectorAll(".regalos");
-const modalCarta = document.getElementById("modalCarta");
+const regalos = document.querySelectorAll(".caja");
 
-tapas.forEach(regalo => {
-  regalo.addEventListener("click", () => {
-    modalCarta.classList.add("activo");
-  });
+const modal1 = document.getElementById("modalCarta1");
+const modal2 = document.getElementById("modalCarta2");
+
+regalos[0].addEventListener("click", () => {
+  modal1.classList.add("activo");
 });
 
-cajas.forEach(caja => {
-  caja.addEventListener("click", () => {
-    modalCarta.classList.add("activo");
-  });
+regalos[1].addEventListener("click", () => {
+  modal2.classList.add("activo");
 });
 
-modalCarta.addEventListener("click", () => {
-  modalCarta.classList.remove("activo");
+modal1.addEventListener("click", () => {
+  modal1.classList.remove("activo");
+});
+
+modal2.addEventListener("click", () => {
+  modal2.classList.remove("activo");
 });
 
 // Todo Oscuro + Soplido + Canción
