@@ -46,8 +46,8 @@ body {
   height:22px;
   background:#4A4A4A;
   border-radius:100px;
-  margin-top:-5px;
-  z-index:1;
+  bottom:0;
+  left:0;
 }
 
 
