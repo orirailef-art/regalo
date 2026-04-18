@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: rgb(182, 212, 255);
+  background-color: rgba(255, 182, 193, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,20 +28,20 @@ body {
 }
 
 /* Portaretrato + torta + caja de regalo */
-.portaretrato-torta-caja{
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  width:850px;
-  gap:20px;
+.portaretrato-torta-caja {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 520px;
+  gap: 20px;
   position: relative;
-  bottom:-50px;
+  bottom: -50px;
 }
 
 /* Mesa */
 .soporte {
   position: relative;
-  width: 1000px;
+  width: 500px;
   left: -20px;
   bottom: -50px;
   height: 20px;
@@ -489,19 +489,18 @@ body {
 }
 
 /*Mensaje*/
-.happy-birthday{
-  position:absolute;
-  top:-150px;
-  left:20%;
-  transform:translateX(-50%);
-  font-family:'Pacifico', cursive;
-  font-size:52px;
-  color:#3126fa;
-  user-select:none;
-  white-space:nowrap;
-  text-shadow:2px 2px 8px rgba(0,0,0,.25);
-  animation:flotar 2s ease-in-out infinite,
-             brillo 1.5s infinite;
+.happy-birthday {
+    position: absolute;
+    top: -150px; /* Ajusta la distancia vertical desde la torta */
+    left: 20%;
+    transform: translateX(-50%);
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: #ff4d6d; 
+    user-select: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    animation: flotar 2s ease-in-out infinite,
+               brillo 1.5s infinite;
 }
 
 /* Modal */
@@ -599,12 +598,3 @@ body {
   pointer-events: none;
 }
 
-
-.regalo-extra{
-  transform:scale(.75);
-}
-
-
-.regalo-extra{
-  transform:scale(.75);
-}
