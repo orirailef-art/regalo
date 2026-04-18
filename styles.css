@@ -79,7 +79,6 @@ body {
 /*Regalo De Cumpleaños*/
 .caja {
   position: relative;
-  left: 0;
   width: 150px; /* ancho del objeto */
   height: 180px; /* alto total (caja + cinta + estrellas)*/
   display: flex;
