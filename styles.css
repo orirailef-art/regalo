@@ -242,8 +242,8 @@ body {
   position: absolute;
   bottom: 210px; /* encima de la vela */
   left: calc(50% - 10px);
-  width: 20px;
-  height: 30px;
+  width: 30px;
+  height: 40px;
   background: radial-gradient(ellipse at bottom, rgba(255, 255, 180, 1) 0%, rgba(255, 200, 0, 0.9) 50%, rgba(255, 120, 0, 0.6) 80%, transparent 100%);
   border-radius: 50%;
   filter: blur(0.5px);
@@ -543,7 +543,7 @@ body {
     left: 20%;
     transform: translateX(-50%);
     font-family: 'Pacifico', cursive;
-    font-size: 60px;
+    font-size: 70px;
     color: #2f24a6; 
     user-select: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
@@ -586,7 +586,7 @@ body {
 
 .carta h2 {
   font-family: cursive;
-  font-size: 20px;
+  font-size: 30px;
   color: #070589; 
   margin-bottom: 16px;
   text-align: center;
@@ -594,7 +594,7 @@ body {
 
 .carta h3 {
   font-family: 'Georgia', serif ;
-  font-size: 20px;
+  font-size: 18px;
   color: #070589; 
   margin-bottom: 16px;
   text-align: center;
