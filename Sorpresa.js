@@ -1,22 +1,24 @@
 // --- LÓGICA DE LA VELA (Soplido y Canción) ---
 const llama = document.getElementById("botonLlama");
+const overlay = document.querySelector(".overlay");
 const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
-const overlay = document.querySelector(".overlay");
 
 if (llama) {
   llama.addEventListener("click", () => {
+    // 1. Sonido de soplido inmediato
     soplido.currentTime = 0;
     soplido.play();
 
-    // Animación de apagado
+    // 2. Apagar la llama visualmente
     llama.style.animation = "apagar 0.5s forwards";
 
+    // 3. Pequeña pausa dramática antes de que "vuelva la luz" y la música
     setTimeout(() => {
+      overlay.classList.add("hidden"); // Aquí es donde aparece todo
       cancion.currentTime = 0;
       cancion.play();
-      overlay.classList.add("hidden");
-    }, 1000);
+    }, 800); 
   });
 }
 
