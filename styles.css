@@ -29,13 +29,17 @@ body {
 
 /* Portaretrato + torta + caja de regalo */
 .portaretrato-torta-caja {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;          /* Que use todo el espacio disponible */
-  gap: 30px;            /* Más espacio entre los regalos, la torta y el cuadro */
-  position: relative;
-  bottom: -50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Cambia el ancho fijo (520px) por 100% o el ancho de la mesa */
+    width: 900px; 
+    gap: 20px;
+    position: relative;
+    bottom: -50px;
+    margin: 0 auto; /* Centra el contenedor completo */
+
 }
 
 /* Mesa */
