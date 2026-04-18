@@ -41,6 +41,7 @@ body {
 
 /* Mesa */
 .soporte {
+  margin: 0 auto
   position: relative;
   width: 550px;
   left: 0px;
@@ -75,6 +76,7 @@ body {
 
 /*Torta De Cumpleaños*/
 .torta-cumpleaños {
+  margin: 0 auto
   position: relative;
   width: 274px;  /* mismo ancho que la torta */
   height: 180px; /* espacio para torta + vela + llama */
