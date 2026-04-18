@@ -31,7 +31,7 @@ body {
 /* Portaretrato + torta + caja de regalo */
 .caja-torta-caja {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
   width: 550px;
   gap: 20px;
@@ -77,7 +77,7 @@ body {
 /*Torta De Cumpleaños*/
 .torta-cumpleaños {
   margin: 0 auto
-  position: relative;
+  position: absolute;
   width: 274px;  /* mismo ancho que la torta */
   height: 180px; /* espacio para torta + vela + llama */
   display: flex;
