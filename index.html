@@ -2,29 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
     <title>Feliz Cumpleaños</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="mobile.css"
-      media="only screen and (max-width: 768px)"
-    />
+    <link rel="stylesheet" href="mobile.css" media="only screen and (max-width: 768px)" />
   </head>
   <body>
-    <!--Confeti Atras-->
     <canvas id="canvas1"></canvas>
 
     <div class="contenedor">
-      <!-- PortaRetrato -->
       <div class="portaretrato-torta-caja">
+        
         <div class="portaretrato">
           <div class="marco">
             <img src="cumplañero.png" alt="Foto 1" />
@@ -32,116 +21,95 @@
           <div class="soporte-marco"></div>
         </div>
 
-        <div class="caja-wrapper">
-    <div class="caja">
-      <div class="regalos">
-        <div class="regalo-sombra"></div>
-      </div>
-      <div class="cinta-de-regalo">
-        <div class="cinta-de-regalo-izquierda"></div>
-        <div class="cinta-de-regalo-derecha"></div>
-        <div class="cinta-de-regalo-centro"></div>
-      </div>
+        <div class="caja-wrapper" id="cajaRegalo1">
+          <div class="caja">
+            <div class="regalos"><div class="regalo-sombra"></div></div>
+            <div class="cinta-de-regalo">
+              <div class="cinta-de-regalo-izquierda"></div>
+              <div class="cinta-de-regalo-derecha"></div>
+              <div class="cinta-de-regalo-centro"></div>
+            </div>
+            <div class="regalo"></div>
+            <div class="icono-estrella estrella1"></div>
+            <div class="icono-estrella estrella2"></div>
+            <div class="icono-estrella estrella3"></div>
+            <div class="icono-estrella estrella4"></div>
+            <div class="icono-estrella estrella5"></div>
+          </div>
+        </div>
 
-      <div class="regalo"></div>
-      <div class="icono-estrella estrella1"></div>
-      <div class="icono-estrella estrella2"></div>
-      <div class="icono-estrella estrella3"></div>
-      <div class="icono-estrella estrella4"></div>
-      <div class="icono-estrella estrella5"></div>
-    </div>
-  </div>
-
-        <!--Torta De Cumpleaños-->
         <div class="torta-cumpleaños">
           <div class="torta">
             <div class="chocolate"></div>
           </div>
           <div class="vela"></div>
-          <div class="llama" id="botonLlama"></div>
+          <div class="llama"></div> 
         </div>
 
-        <!--Caja De Regalo-->
-        <div class="caja-wrapper">
-    <div class="caja">
-      
-       <div class="regalos">
-        <div class="regalo-sombra"></div>
-      </div>
-      
-      <div class="cinta-de-regalo">
-        <div class="cinta-de-regalo-izquierda"></div>
-        <div class="cinta-de-regalo-derecha"></div>
-        <div class="cinta-de-regalo-centro"></div>
-      </div>
-     
-      <div class="regalo"></div>
-      <div class="icono-estrella estrella1"></div>
-      <div class="icono-estrella estrella2"></div>
-      <div class="icono-estrella estrella3"></div>
-      <div class="icono-estrella estrella4"></div>
-      <div class="icono-estrella estrella5"></div>
-    </div>
-  </div>
+        <div class="caja-wrapper" id="cajaRegalo2">
+          <div class="caja">
+            <div class="regalos"><div class="regalo-sombra"></div></div>
+            <div class="cinta-de-regalo">
+              <div class="cinta-de-regalo-izquierda"></div>
+              <div class="cinta-de-regalo-derecha"></div>
+              <div class="cinta-de-regalo-centro"></div>
+            </div>
+            <div class="regalo"></div>
+            <div class="icono-estrella estrella1"></div>
+            <div class="icono-estrella estrella2"></div>
+            <div class="icono-estrella estrella3"></div>
+            <div class="icono-estrella estrella4"></div>
+            <div class="icono-estrella estrella5"></div>
+          </div>
+        </div>
 
         <div class="portaretrato">
-    <div class="marco">
-      <img src="otra_foto.png" alt="Foto 2" /> </div>
-    <div class="soporte-marco"></div>
-  </div>
+          <div class="marco">
+            <img src="otra_foto.png" alt="Foto 2" />
+          </div>
+          <div class="soporte-marco"></div>
+        </div>
 
-
-        <!--Mensaje Feliz Cumpleaños-->
         <div class="happy-birthday">Feliz Cumpleaños</div>
       </div>
 
-      <!--Mesa-->
       <div class="soporte"></div>
     </div>
 
-    <!-- Carta Modal -->
     <div class="modal-carta" id="modalCarta1">
-  <div class="contenido-carta">
-    <div class="carta">
-      <h2>Nico </h2>
-      <p>Sos, sin exagerar, el mejor amigo que podría tener. Nunca tuve que pedirte que estés, porque siempre estuviste. Y eso vale más que cualquier cosa. En un mundo donde todo es medio inestable, vos sos ese lugar seguro al que siempre puedo volver.
-            Gracias por bancarme, en serio… porque sé que no siempre es fácil 😌. Pero ahí estás igual, firme, como si nada. Y eso habla muchísimo de vos.
-            No sé si soy la mejor amiga del mundo, pero sí sé que lo intento, porque nuestra amistad lo vale todo. Y no me imagino mi vida sin vos, así de simple.
-            Te amo con todo mi corazón. Feliz cumpleaños 💛</p>
-       <p class="firma">Con cariño,<br />tu mj amiga más linda Ori</p>
+      <div class="contenido-carta">
+        <div class="carta">
+          <h2>Nico</h2>
+          <p>Sos, sin exagerar, el mejor amigo que podría tener. Nunca tuve que pedirte que estés, porque siempre estuviste. Y eso vale más que cualquier cosa. En un mundo donde todo es medio inestable, vos sos ese lugar seguro al que siempre puedo volver.
+Gracias por bancarme, en serio… porque sé que no siempre es fácil 😌. Pero ahí estás igual, firme, como si nada. Y eso habla muchísimo de vos.
+No sé si soy la mejor amiga del mundo, pero sí sé que lo intento, porque nuestra amistad lo vale todo. Y no me imagino mi vida sin vos, así de simple.
+Te amo con todo mi corazón. Feliz cumpleaños 💛</p>
+          <p class="firma">Con cariño,<br />tu mj amiga más linda Ori</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="modal-carta" id="modalCarta2">
-  <div class="contenido-carta">
-    <div class="carta">
-      <h2>🎁 VALE POR 1 BURGER TODO PAGO 🎁 </h2>
-      <p>Este cupón te da derecho a:
+    <div class="modal-carta" id="modalCarta2">
+      <div class="contenido-carta">
+        <div class="carta">
+          <h2>🎁 VALE POR 1 BURGER 🎁</h2>
+          <p>Este cupón te da derecho a:
 🍔 Una hamburguesa completamente pagada
 🍟 Papas (obvio, no somos ratas)
 🥤 Bebida incluida porque se hace bien o no se hace
 
 Condiciones:
 – Válido cuando vos quieras
-– La compañía (yo) viene incluida sí o sí, no negociable</p>
+– La compañía (yo) viene incluida sí o sí, no negociable.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    <div class="modal-carta" id="modalCarta">
-   
-   
 
-    <!--Confeti Delante-->
     <canvas id="canvas2"></canvas>
 
-    <!--Todo Oscuro-->
     <audio id="soplido" src="soplar1.mp3" preload="auto"></audio>
-    <audio
-      id="cancion"
-      src="cancion.mp3"
-      preload="auto"
-    ></audio>
+    <audio id="cancion" src="cancion.mp3" preload="auto"></audio>
+    
     <div class="overlay"></div>
 
     <script src="Confeti.js"></script>
@@ -149,5 +117,3 @@ Condiciones:
     <script src="Sorpresa.js"></script>
   </body>
 </html>
-
-
