@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: #AEC6CF
+  background-color: #8fd0fc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -496,7 +496,7 @@ body {
     transform: translateX(-50%);
     font-family: 'Pacifico', cursive;
     font-size: 40px;
-    color: #ff4d6d; 
+    color: #293cc9; 
     user-select: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
     animation: flotar 2s ease-in-out infinite,
