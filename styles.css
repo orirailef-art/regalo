@@ -230,7 +230,7 @@ body {
     position: fixed;
     inset: 0;
     /* 0.9 es casi oscuro total, pero deja intuir el fondo como en tu foto ideal */
-    background-color: rgba(0, 0, 0, 0.9); 
+    background-color: #000000; 
     opacity: 1;
     z-index: 5000; /* Un número alto, pero menor que la llama */
     transition: opacity 1.5s ease;
