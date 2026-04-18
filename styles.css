@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 520px;
+  width: 620px;
   gap: 20px;
   position: relative;
   bottom: -50px;
