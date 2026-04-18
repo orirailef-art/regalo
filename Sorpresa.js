@@ -1,53 +1,75 @@
-window.addEventListener("DOMContentLoaded", () => {
-  // REGALOS
-  const regalos = document.querySelectorAll(".caja");
+// ==============================
+// ABRIR Y CERRAR CARTA
+// ==============================
 
-  const modal1 = document.getElementById("modalCarta1");
-  const modal2 = document.getElementById("modalCarta2");
+// Selecciona la tapa del regalo
+const regalo = document.querySelector(".regalo");
 
-  if (regalos[0]) {
-    regalos[0].addEventListener("click", () => {
-      modal1.classList.add("activo");
-    });
-  }
+// Selecciona la base del regalo
+const regalos = document.querySelector(".regalos");
 
-  if (regalos[1]) {
-    regalos[1].addEventListener("click", () => {
-      modal2.classList.add("activo");
-    });
-  }
+// Selecciona el modal donde está la carta
+const modalCarta = document.getElementById("modalCarta");
 
-  if (modal1) {
-    modal1.addEventListener("click", () => {
-      modal1.classList.remove("activo");
-    });
-  }
+// Cuando se hace clic en la tapa del regalo,
+// muestra la carta agregando la clase "activo"
+regalo.addEventListener("click", () => {
+  modalCarta.classList.add("activo");
+});
 
-  if (modal2) {
-    modal2.addEventListener("click", () => {
-      modal2.classList.remove("activo");
-    });
-  }
+// Cuando se hace clic en la base del regalo,
+// también muestra la carta
+regalos.addEventListener("click", () => {
+  modalCarta.classList.add("activo");
+});
 
-  // VELA
-  const overlay = document.querySelector(".overlay");
-  const soplido = document.getElementById("soplido");
-  const cancion = document.getElementById("cancion");
-  const llama = document.querySelector(".llama");
+// Cuando se hace clic en cualquier parte del modal,
+// se cierra la carta quitando la clase "activo"
+modalCarta.addEventListener("click", () => {
+  modalCarta.classList.remove("activo");
+});
 
-  if (llama) {
-    llama.addEventListener("click", () => {
-      soplido.currentTime = 0;
-      soplido.play();
 
-      llama.style.animation = "apagar 0.5s forwards";
+// ==============================
+// OSCURIDAD + SOPLAR VELA + MÚSICA
+// ==============================
 
-      setTimeout(() => {
-        cancion.currentTime = 0;
-        cancion.play();
+// Selecciona la capa negra inicial
+const overlay = document.querySelector(".overlay");
 
-        if (overlay) overlay.classList.add("hidden");
-      }, 1000);
-    });
-  }
+// Selecciona audio del soplido
+const soplido = document.getElementById("soplido");
+
+// Selecciona música de cumpleaños
+const cancion = document.getElementById("cancion");
+
+// Selecciona la llama de la vela
+const llama = document.querySelector(".llama");
+
+// Cuando se hace clic en la llama
+llama.addEventListener("click", () => {
+
+  // Reinicia el audio del soplido por si ya sonó antes
+  soplido.currentTime = 0;
+
+  // Reproduce sonido de soplar
+  soplido.play();
+
+  // Ejecuta animación para apagar la llama
+  // forwards = mantiene el último estado de la animación
+  llama.style.animation = "apagar 0.5s forwards";
+
+  // Espera 1 segundo antes de continuar
+  setTimeout(() => {
+
+    // Reinicia la canción
+    cancion.currentTime = 0;
+
+    // Reproduce la música
+    cancion.play();
+
+    // Hace desaparecer la oscuridad inicial
+    overlay.classList.add("hidden");
+
+  }, 1000);
 });
