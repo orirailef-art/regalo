@@ -1,15 +1,15 @@
 // Carta
 const tapas = document.querySelectorAll(".regalo");
-const cajas = document.querySelectorAll(".caja");
+const regalos = document.querySelectorAll(".caja");
 
 const modal1 = document.getElementById("modalCarta1");
 const modal2 = document.getElementById("modalCarta2");
 
-cajas[0].addEventListener("click", () => {
+regalos[0].addEventListener("click", () => {
   modal1.classList.add("activo");
 });
 
-cajas[1].addEventListener("click", () => {
+regalos[1].addEventListener("click", () => {
   modal2.classList.add("activo");
 });
 
@@ -20,7 +20,6 @@ modal1.addEventListener("click", () => {
 modal2.addEventListener("click", () => {
   modal2.classList.remove("activo");
 });
-
 // Todo Oscuro + Soplido + Canción
 const overlay = document.querySelector(".overlay");
 const soplido = document.getElementById("soplido");
