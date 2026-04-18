@@ -28,7 +28,7 @@ body {
 }
 
 /* Portaretrato + torta + caja de regalo */
-.portaretrato-torta-caja {
+.caja-torta-caja {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -41,7 +41,7 @@ body {
 /* Mesa */
 .soporte {
   position: relative;
-  width: 500px;
+  width: 600px;
   left: -20px;
   bottom: -50px;
   height: 20px;
