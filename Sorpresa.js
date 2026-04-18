@@ -1,39 +1,6 @@
-const llama = document.getElementById("botonLlama");
-const overlay = document.querySelector(".overlay");
-const soplido = document.getElementById("soplido");
-const cancion = document.getElementById("cancion");
-const texto = document.querySelector(".happy-birthday");
-
-if (llama) {
-  llama.onclick = function() {
-    console.log("Llama clickeada!"); // Si ves esto en la consola, el clic funciona
-    
-    // 1. Sonido
-    soplido.currentTime = 0;
-    soplido.play();
-
-    // 2. Apagar llama
-    llama.style.display = "none"; 
-
-    // 3. Efecto sorpresa
-    setTimeout(() => {
-      overlay.classList.add("hidden");
-      texto.style.opacity = "1";
-      cancion.play();
-    }, 1000);
-  };
-}
-
-// --- LÓGICA DE LOS REGALOS Y CARTAS ---
-// Seleccionamos todos los envoltorios de regalos
-const envoltorios = document.querySelectorAll('.caja-wrapper');
-
-envoltorios.forEach((envoltorio, index) => {
-  // Buscamos las partes clicables dentro de cada regalo
-  const tapa = envoltorio.querySelector('.regalo');
-  const base = envoltorio.querySelector('.regalos');
-  
-  // Determinamos qué carta le toca (index 0 para el primero, index 1 para el segundo)
+// Carta
+const regalo = document.querySelector(".regalo");
+const regalos = document.querySelector(".regalos");
   const idCarta = index === 0 ? "modalCarta1" : "modalCarta2";
   const modal = document.getElementById(idCarta);
 
@@ -52,3 +19,35 @@ envoltorios.forEach((envoltorio, index) => {
     });
   }
 });
+
+
+// Todo Oscuro + Soplido + Canción
+const overlay = document.querySelector(".overlay");
+const soplido = document.getElementById("soplido");
+const cancion = document.getElementById("cancion");
+const llama = document.querySelector(".llama");
+
+llama.addEventListener("click", () => {
+  soplido.currentTime = 0;
+  soplido.play();
+
+  llama.style.animation = "apagar 0.5s forwards"; // forwards -> Ultimo frame (to)
+
+  setTimeout(() => {
+    cancion.currentTime = 0;
+    cancion.play();
+    overlay.classList.add("hidden");
+  }, 1000);
+});
+
+
+// --- LÓGICA DE LOS REGALOS Y CARTAS ---
+// Seleccionamos todos los envoltorios de regalos
+const envoltorios = document.querySelectorAll('.caja-wrapper');
+
+envoltorios.forEach((envoltorio, index) => {
+  // Buscamos las partes clicables dentro de cada regalo
+  const tapa = envoltorio.querySelector('.regalo');
+  const base = envoltorio.querySelector('.regalos');
+  
+  
