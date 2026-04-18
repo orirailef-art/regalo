@@ -501,7 +501,7 @@ body {
 .happy-birthday {
     position: absolute;
     /* Subimos el valor negativo para que esté bien arriba de la torta */
-    top: -250px; 
+    top: -200px; 
     
     /* Centrado absoluto respecto al padre */
     left: 50%;
@@ -514,7 +514,7 @@ body {
     text-align: center;
 
     font-family: 'Pacifico', cursive;
-    font-size: 60px;
+    font-size: 70px;
     color: #ff4d6d; 
     user-select: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
