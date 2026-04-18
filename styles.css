@@ -32,43 +32,41 @@ body {
   display:flex;
   justify-content:center;
   align-items:flex-end;
-  gap:28px;
-  width:760px;
+  gap:35px;
+  width:850px;
   position:relative;
-  bottom:0;
-  z-index:5;
+  bottom:-50px;
 }
 
 /* Mesa */
 .soporte{
   position:relative;
-  width:760px;
-  height:22px;
-  background:#4A4A4A;
+  width:820px;
+  height:24px;
   border-radius:100px;
-  bottom:0;
+  background:#4A4A4A;
+  bottom:-50px;
   left:0;
 }
-
-
 .soporte::before{
   content:"";
   position:absolute;
-  width:110px;
+  width:120px;
   height:1000px;
   background:#4A4A4A;
-  left:180px;
-  top:20px;
+  left:220px;
+  top:22px;
 }
 
 .soporte::after{
   content:"";
   position:absolute;
-  width:110px;
+  width:120px;
   height:1000px;
   background:rgb(182,212,255);
-  left:470px;
-  top:20px;
+  border-radius:30px 30px 0 0;
+  left:480px;
+  top:22px;
 }
 
 /*PortaRetrato*/
@@ -491,15 +489,17 @@ body {
 /*Mensaje*/
 .happy-birthday{
   position:absolute;
-  top:-170px;
+  top:-210px;
   left:50%;
-  font-size:52px;
+  transform:translateX(-50%);
   font-family:'Pacifico', cursive;
+  font-size:52px;
   color:#3126fa;
+  user-select:none;
   white-space:nowrap;
-  z-index:20;
-  margin-left:-190px;
-  animation: brillo 1.5s infinite;
+  text-shadow:2px 2px 8px rgba(0,0,0,.25);
+  animation:flotar 2s ease-in-out infinite,
+             brillo 1.5s infinite;
 }
 
 /* Modal */
@@ -596,6 +596,19 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+
+.regalo-extra{
+  transform:scale(.65);
+}
+
+.izquierda{
+  margin-right:-15px;
+}
+
+.derecha{
+  margin-left:-15px;
+}
+
 
 .regalo-extra{
   transform:scale(.75);
