@@ -41,8 +41,8 @@ body {
 /* Mesa */
 .soporte{
   position:relative;
-  width:820px;
-  height:24px;
+  width:1000px;
+  height:-24px;
   border-radius:100px;
   background:#4A4A4A;
   bottom:-50px;
