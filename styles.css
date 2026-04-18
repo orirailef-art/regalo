@@ -78,8 +78,7 @@ body {
 .torta-cumpleaños {
   margin: 0 auto
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0px;
   width: 274px;  /* mismo ancho que la torta */
   height: 180px; /* espacio para torta + vela + llama */
   display: flex;
