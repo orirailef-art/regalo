@@ -1,8 +1,6 @@
 // Carta
 const tapas = document.querySelectorAll(".regalo");
 const cajas = document.querySelectorAll(".regalos");
-const regalos = document.querySelectorAll(".caja");
-
 const modal1 = document.getElementById("modalCarta1");
 const modal2 = document.getElementById("modalCarta2");
 
