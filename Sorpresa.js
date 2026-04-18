@@ -1,75 +1,48 @@
-// ==============================
-// ABRIR Y CERRAR CARTA
-// ==============================
+// Carta
+const regalosInteractivos = document.querySelectorAll(".regalo, .regalos");
+const modalesCarta = document.querySelectorAll(".modal-carta");
 
-// Selecciona la tapa del regalo
-const regalo = document.querySelector(".regalo");
-
-// Selecciona la base del regalo
-const regalos = document.querySelector(".regalos");
-
-// Selecciona el modal donde está la carta
-const modalCarta = document.getElementById("modalCarta");
-
-// Cuando se hace clic en la tapa del regalo,
-// muestra la carta agregando la clase "activo"
-regalo.addEventListener("click", () => {
-  modalCarta.classList.add("activo");
+regalosInteractivos.forEach((elemento, indice) => {
+  elemento.addEventListener("pointerdown", () => {
+    const modal = modalesCarta[indice] || modalesCarta[0];
+    modal?.classList.add("activo");
+  });
 });
 
-// Cuando se hace clic en la base del regalo,
-// también muestra la carta
-regalos.addEventListener("click", () => {
-  modalCarta.classList.add("activo");
+modalesCarta.forEach((modal) => {
+  modal.addEventListener("pointerdown", (evento) => {
+    // Solo cerrar cuando se toca el fondo oscuro.
+    if (evento.target === modal) {
+      modal.classList.remove("activo");
+    }
+  });
 });
 
-// Cuando se hace clic en cualquier parte del modal,
-// se cierra la carta quitando la clase "activo"
-modalCarta.addEventListener("click", () => {
-  modalCarta.classList.remove("activo");
-});
-
-
-// ==============================
-// OSCURIDAD + SOPLAR VELA + MÚSICA
-// ==============================
-
-// Selecciona la capa negra inicial
+// Todo Oscuro + Soplido + Cancion
 const overlay = document.querySelector(".overlay");
-
-// Selecciona audio del soplido
 const soplido = document.getElementById("soplido");
-
-// Selecciona música de cumpleaños
 const cancion = document.getElementById("cancion");
-
-// Selecciona la llama de la vela
 const llama = document.querySelector(".llama");
+const vela = document.querySelector(".vela");
 
-// Cuando se hace clic en la llama
-llama.addEventListener("click", () => {
+let velaApagada = false;
 
-  // Reinicia el audio del soplido por si ya sonó antes
+function apagarVela() {
+  if (velaApagada || !llama || !overlay || !soplido || !cancion) return;
+  velaApagada = true;
+
   soplido.currentTime = 0;
-
-  // Reproduce sonido de soplar
   soplido.play();
-
-  // Ejecuta animación para apagar la llama
-  // forwards = mantiene el último estado de la animación
   llama.style.animation = "apagar 0.5s forwards";
 
-  // Espera 1 segundo antes de continuar
   setTimeout(() => {
-
-    // Reinicia la canción
     cancion.currentTime = 0;
-
-    // Reproduce la música
     cancion.play();
-
-    // Hace desaparecer la oscuridad inicial
     overlay.classList.add("hidden");
-
   }, 1000);
+}
+
+llama?.addEventListener("pointerdown", apagarVela);
+vela?.addEventListener("pointerdown", apagarVela);
+
 });
