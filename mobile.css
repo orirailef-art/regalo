@@ -35,11 +35,7 @@
 }
 
 /*Objetos de la mesa*/
-.portaretrato {
-  transform: scale(0.75);
-  left: 65px;
-  bottom: -12px;
-}
+
 
 .torta {
   transform: scale(0.75);
@@ -51,10 +47,6 @@
   transform: scale(0.75);
   left: -65px;
   bottom: -26px;
-}
-
-.caja-wrapper:nth-child(3) .caja {
-  left: 10px;
 }
 
 .vela {
@@ -75,22 +67,6 @@
   margin: 0 auto; /* Centrar horizontalmente */
 }
 
-/* Para pantallas hasta 768px */
-@media only screen and (max-width: 768px) {
-  .soporte::before,
-  .soporte::after {
-    height: 80vh; /* Ajusta la altura al 80% de la pantalla */
-  }
-}
-
-/* Para pantallas muy pequeñas (hasta 400px) */
-@media only screen and (max-width: 400px) {
-  .soporte::before,
-  .soporte::after {
-    height: 70vh; /* Reduce aún más para evitar desbordamiento */
-  }
-}
-
 /* Nuevo media query para pantallas más pequeñas */
 @media only screen and (max-width: 400px) {
 
@@ -109,12 +85,12 @@
     left: 130px; 
   }
 
-  .portaretrato {
+  .caja {
     transform: scale(0.65);
-    left: 92px;
-    bottom: -16px;
+    left: -100px;
+    bottom: -35px;
   }
-
+  
   .torta {
     transform: scale(0.63);
     left: 17px;
@@ -142,4 +118,3 @@
     transform: scale(0.7);
   }
 }
-
