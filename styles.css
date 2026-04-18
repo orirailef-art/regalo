@@ -57,7 +57,7 @@ body {
   height: 1000px;
   background-color: #4A4A4A;
   left: 50px;
-  top: 18px;
+  top: 20px;
 }
 
 .soporte::after {
@@ -69,7 +69,7 @@ body {
   border-radius: 30px 30px 0 0;
   left: 50px;
   top: 20px;
-  box-shadow: 125px 0 #8fd0fc;
+  box-shadow: 120px 0 #8fd0fc;
 }
 
 
