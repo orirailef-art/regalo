@@ -227,16 +227,19 @@ body {
 
 /*Todo Oscuro*/
 .overlay {
-  position: fixed;
-  inset: 0;
-  background-color: black;
-  opacity: 1;
-  z-index: 9999;
-  transition: opacity 1.5s ease;
+position: fixed;
+    inset: 0;
+    /* 0.85 es un negro muy oscuro pero permite ver un poco el fondo */
+    background-color: rgba(0, 0, 0, 0.85); 
+    opacity: 1;
+    z-index: 5000; /* Alto, pero debajo de la llama que tiene 10000 */
+    transition: opacity 1.5s ease, visibility 1.5s;
+    pointer-events: auto; /* Bloquea clics en el resto de la mesa al inicio */
 }
 .overlay.hidden {
-  opacity: 0;
-  pointer-events: none;
+ opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Permite tocar los regalos una vez que se "enciende" la luz */
 }
 
 @keyframes apagar {
