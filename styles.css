@@ -8,6 +8,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 /*Confeti Atras*/
@@ -30,11 +32,12 @@ body {
 /* Portaretrato + torta + caja de regalo */
 .caja-torta-caja {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
   width: 520px;
   gap: 20px;
-  position: relative;
+  position: center;
   bottom: -50px;
 }
 
