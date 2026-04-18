@@ -496,14 +496,28 @@ body {
 /*Mensaje*/
 .happy-birthday {
     position: absolute;
-    top: -100px; /* Ajusta la distancia vertical desde la torta */
+    /* Subimos el valor negativo para que esté bien arriba de la torta */
+    top: -250px; 
+    
+    /* Centrado absoluto respecto al padre */
     left: 50%;
     transform: translateX(-50%);
+    
+    /* Forzamos que el texto ocupe una sola línea y no tenga espacios extra */
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
     font-family: 'Pacifico', cursive;
     font-size: 60px;
     color: #ff4d6d; 
     user-select: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    
+    /* Capa superior para que nada lo tape */
+    z-index: 100;
+
     animation: flotar 2s ease-in-out infinite,
                brillo 1.5s infinite;
 }
