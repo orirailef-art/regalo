@@ -1,39 +1,47 @@
-// Carta
-const regalosTapas = document.querySelectorAll(".regalo");
-const regalosBases = document.querySelectorAll(".regalos");
-const modalCarta = document.getElementById("modalCarta");
+/* REGALO A */
+const giftA = document.querySelectorAll(".giftA");
+const modalA = document.getElementById("modalA");
 
-regalosTapas.forEach(r=>{
-  r.addEventListener("click",()=>{
-    modalCarta.classList.add("activo");
-  });
+/* REGALO B */
+const giftB = document.querySelectorAll(".giftB");
+const modalB = document.getElementById("modalB");
+
+/* eventos independientes */
+giftA.forEach(obj=>{
+    obj.addEventListener("click",()=>{
+        modalA.classList.add("activo");
+    });
 });
 
-regalosBases.forEach(r=>{
-  r.addEventListener("click",()=>{
-    modalCarta.classList.add("activo");
-  });
+giftB.forEach(obj=>{
+    obj.addEventListener("click",()=>{
+        modalB.classList.add("activo");
+    });
 });
 
-modalCarta.addEventListener("click", () => {
-  modalCarta.classList.remove("activo");
+/* cerrar cartas */
+modalA.addEventListener("click",()=>{
+    modalA.classList.remove("activo");
 });
 
-// Todo Oscuro + Soplido + Canción
+modalB.addEventListener("click",()=>{
+    modalB.classList.remove("activo");
+});
+
+/* vela */
 const overlay = document.querySelector(".overlay");
+const llama = document.querySelector(".llama");
 const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
-const llama = document.querySelector(".llama");
 
-llama.addEventListener("click", () => {
-  soplido.currentTime = 0;
-  soplido.play();
+llama.addEventListener("click",()=>{
 
-  llama.style.animation = "apagar 0.5s forwards"; // forwards -> Ultimo frame (to)
+    soplido.play();
 
-  setTimeout(() => {
-    cancion.currentTime = 0;
-    cancion.play();
-    overlay.classList.add("hidden");
-  }, 1000);
+    setTimeout(()=>{
+        overlay.classList.add("hidden");
+        cancion.play();
+        llama.style.display="none";
+    },1000);
+
 });
