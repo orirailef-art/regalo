@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: rgb(143, 208, 252) ;
+  background-color: rgba(143, 208, 252, 1) ;
   display: flex;
   justify-content: center;
   align-items: center;
