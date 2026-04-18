@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 600px;
+  width: 550px;
   gap: 20px;
   position: relative;
   bottom: -50px;
@@ -42,7 +42,7 @@ body {
 /* Mesa */
 .soporte {
   position: relative;
-  width: 600px;
+  width: 550px;
   left: 0px;
   bottom: -50px;
   height: 20px;
