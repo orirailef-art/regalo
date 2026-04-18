@@ -1,14 +1,15 @@
 // Carta
 const tapas = document.querySelectorAll(".regalo");
-const cajas = document.querySelectorAll(".regalos");
+const cajas = document.querySelectorAll(".caja");
+
 const modal1 = document.getElementById("modalCarta1");
 const modal2 = document.getElementById("modalCarta2");
 
-regalos[0].addEventListener("click", () => {
+cajas[0].addEventListener("click", () => {
   modal1.classList.add("activo");
 });
 
-regalos[1].addEventListener("click", () => {
+cajas[1].addEventListener("click", () => {
   modal2.classList.add("activo");
 });
 
