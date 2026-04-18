@@ -53,6 +53,10 @@
   bottom: -26px;
 }
 
+.caja-wrapper:nth-child(3) .caja {
+  left: 10px;
+}
+
 .vela {
   transform: scale(0.75);
   bottom: 94px;
@@ -69,6 +73,22 @@
   transform: scale(0.8);
   transform-origin: center center;
   margin: 0 auto; /* Centrar horizontalmente */
+}
+
+/* Para pantallas hasta 768px */
+@media only screen and (max-width: 768px) {
+  .soporte::before,
+  .soporte::after {
+    height: 80vh; /* Ajusta la altura al 80% de la pantalla */
+  }
+}
+
+/* Para pantallas muy pequeñas (hasta 400px) */
+@media only screen and (max-width: 400px) {
+  .soporte::before,
+  .soporte::after {
+    height: 70vh; /* Reduce aún más para evitar desbordamiento */
+  }
 }
 
 /* Nuevo media query para pantallas más pequeñas */
