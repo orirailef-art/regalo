@@ -1,95 +1,11 @@
-html {
-  overflow: hidden; 
-}
-
+html { overflow: hidden; }
 body {
-  background-color: rgb(182, 211, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-/* --- CAPAS (Z-INDEX) ---
-   0: Confeti Atrás
-   1: Contenedor (Mesa, Torta, Regalos)
-   2: Confeti Delante
-   999: Overlay (Oscuridad)
-   10000: Llama (Clickable sobre el overlay)
-   20000: Modales (Cartas)
--------------------------- */
-
-#canvas1 { position: absolute; top: 0; left: 0; z-index: 0; pointer-events: none; }
-#canvas2 { position: absolute; top: 0; left: 0; z-index: 2; pointer-events: none; }
-
-.contenedor {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  z-index: 1;
-}
-
-.portaretrato-torta-caja {
+    background-color: #b6d4ff;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    width: 900px; 
-    gap: 20px;
-    position: relative;
-    bottom: -50px;
-}
-
-/* Mesa */
-.soporte {
-  position: relative;
-  width: 1000px;
-  bottom: -50px;
-  height: 20px;
-  border-radius: 100px;
-  background-color: #4A4A4A;
-}
-
-.soporte::before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 1000px;
-  background-color: #4A4A4A;
-  left: calc(50% - 50px);
-  top: 18px;
-}
-
-/* Torta y Vela */
-.torta-cumpleaños {
-  position: relative;
-  width: 274px;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.torta {
-  position: absolute;
-  width: 274px;
-  height: 140px;
-  background-color: #FDE8C8;
-  border-radius: 30px 30px 0 0;
-  overflow: hidden;
-}
-
-.llama {
-  position: absolute;
-  bottom: 210px;
-  left: calc(50% - 10px);
-  width: 20px;
-  height: 30px;
-  background: radial-gradient(ellipse at bottom, #ffffb4 0%, #ffc800 50%, #ff7800 80%, transparent 100%);
-  border-radius: 50%;
-  animation: flama 0.15s infinite alternate ease-in-out;
-  cursor: pointer;
-  z-index: 10000; /* Siempre por encima del overlay para poder clickearla */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 /* Oscuridad Inicial */
@@ -98,89 +14,85 @@ body {
     inset: 0;
     background-color: black;
     opacity: 1;
-    z-index: 999; 
+    z-index: 999;
     transition: opacity 1.5s ease;
     pointer-events: auto;
 }
-
 .overlay.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-/* --- REGLAS PARA LA ANIMACIÓN POR JS --- */
-
-/* Cuando soplas, el JS debe añadir esta clase al body o al elemento */
-.visible {
-    opacity: 1 !important;
+/* Llama (Único elemento clickable al inicio) */
+.llama {
+    position: absolute;
+    bottom: 210px;
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 30px;
+    background: radial-gradient(ellipse at bottom, #ffffb4 0%, #ffc800 50%, #ff7800 80%, transparent 100%);
+    border-radius: 50%;
+    animation: flama 0.15s infinite alternate ease-in-out;
+    cursor: pointer;
+    z-index: 10000;
 }
 
+/* Mensaje que aparece al soplar */
 .happy-birthday {
     position: fixed;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
     font-family: 'Pacifico', cursive;
     font-size: 60px;
     color: #3126fa;
-    opacity: 0; /* JS la cambiará a 1 */
+    opacity: 0;
     transition: opacity 1s ease;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-    animation: flotar 2s ease-in-out infinite, brillo 1.5s infinite;
-    pointer-events: none;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Regalos */
-.caja-wrapper {
-  transform: scale(0.75);
-  transform-origin: center bottom;
-  cursor: pointer;
+/* Estructura Mesa y Objetos */
+.contenedor { display: flex; flex-direction: column; align-items: center; }
+.portaretrato-torta-caja {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 900px;
+    gap: 20px;
+    position: relative;
+    bottom: -50px;
 }
+.soporte {
+    width: 1000px;
+    height: 20px;
+    background: #4A4A4A;
+    border-radius: 100px;
+    position: relative;
+    bottom: -50px;
+}
+
+/* Resto de estilos para torta, cajas y marcos... (Mantené los que tenías para el diseño) */
+.marco { width: 50px; height: 50px; background: #bb7d4e; border: 5px solid #8a5e3c; }
+.caja-wrapper { transform: scale(0.75); cursor: pointer; }
 
 /* Modales */
 .modal-carta {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.85);
+    background: rgba(0,0,0,0.85);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 20000;
     opacity: 0;
     pointer-events: none;
+    z-index: 20000;
     transition: opacity 0.3s ease;
 }
+.modal-carta.activo { opacity: 1; pointer-events: auto; }
 
-.modal-carta.activo {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.carta {
-    background: linear-gradient(135deg, #ffeeee, #fbd5e4);
-    padding: 32px;
-    width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
-    animation: aparecer 0.8s ease;
-}
-
-/* Animaciones */
-@keyframes flama {
-  from { transform: scale(1); }
-  to { transform: scale(1.1) translateY(-2px); }
-}
-
-@keyframes flotar {
-    from, to { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, -15px); }
-}
-
-@keyframes brillo {
-    from, to { text-shadow: 0 0 3px #fff, 0 0 6px #ff4d6d; }
-    50% { text-shadow: 0 0 6px #fff, 0 0 15px #ff4d6d; }
-}
+@keyframes flama { from { transform: scale(1); } to { transform: scale(1.1); } }
+@keyframes apagar { to { transform: scale(0); opacity: 0; } }
 
 @keyframes aparecer {
     from { opacity: 0; transform: scale(0.9); }
