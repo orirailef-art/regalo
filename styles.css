@@ -543,7 +543,7 @@ body {
     left: 20%;
     transform: translateX(-50%);
     font-family: 'Pacifico', cursive;
-    font-size: 40px;
+    font-size: 60px;
     color: #2f24a6; 
     user-select: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
@@ -586,7 +586,7 @@ body {
 
 .carta h2 {
   font-family: cursive;
-  font-size: 18px;
+  font-size: 20px;
   color: #070589; 
   margin-bottom: 16px;
   text-align: center;
