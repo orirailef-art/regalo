@@ -41,7 +41,7 @@ body {
 /* Mesa */
 .soporte {
   position: relative;
-  width: 700px;         /* Más larga para que quepan los regalos */
+  width: 900px;         /* Más larga para que quepan los regalos */
   margin: 0 auto;       /* Centrado automático */
   left: 0;              /* Reset del desplazamiento que tenías */
   bottom: -50px;
