@@ -1,23 +1,28 @@
-// --- LÓGICA DE LA VELA (Soplido y Canción) ---
 const llama = document.getElementById("botonLlama");
 const overlay = document.querySelector(".overlay");
 const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
+const texto = document.querySelector(".happy-birthday");
 
 if (llama) {
- llama.addEventListener("click", () => {
+  llama.onclick = function() {
+    console.log("Llama clickeada!"); // Si ves esto en la consola, el clic funciona
+    
+    // 1. Sonido
+    soplido.currentTime = 0;
     soplido.play();
-    llama.style.animation = "apagar 0.5s forwards";
 
+    // 2. Apagar llama
+    llama.style.display = "none"; 
+
+    // 3. Efecto sorpresa
     setTimeout(() => {
-        overlay.classList.add("hidden");
-        cancion.play();
-        
-        // Hacemos aparecer el texto justo cuando se "prende la luz"
-        const texto = document.querySelector(".happy-birthday");
-        if (texto) texto.style.opacity = "1";
+      overlay.classList.add("hidden");
+      texto.style.opacity = "1";
+      cancion.play();
     }, 1000);
-});
+  };
+}
 
 // --- LÓGICA DE LOS REGALOS Y CARTAS ---
 // Seleccionamos todos los envoltorios de regalos
