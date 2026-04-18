@@ -1,4 +1,4 @@
-// Confeti Adelante
+/ Confeti Adelante
 
 window.oncontextmenu = function () {
   return false;
