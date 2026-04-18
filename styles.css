@@ -588,10 +588,10 @@ body {
 /* Animación flotante */
 @keyframes flotar {
     from, to {
-        transform: translate(-50, 0);
+        transform: translate(0, 0);
     }
     50% {
-        transform: translate(-50, -15px);
+        transform: translate(0, -8px);
     }
 }
 
