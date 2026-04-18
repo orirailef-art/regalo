@@ -1,3 +1,63 @@
+@media only screen and (max-width: 500px) {
+  /* 1. Contenedor: Alinea los 3 objetos (Regalo - Torta - Regalo) parejos */
+  .caja-torta-caja {
+    width: 100%;
+    gap: 0; 
+    display: flex;
+    justify-content: space-around; /* Esto crea el espacio automático entre ellos */
+    align-items: flex-end;
+    transform: scale(0.85); /* Achicamos el conjunto un poquito para que entre */
+    transform-origin: bottom center;
+  }
+
+  /* 2. Cajas: Quitamos cualquier left que las mueva de su sitio */
+  .caja {
+    position: relative;
+    left: 0 !important; 
+    bottom: 0;
+    transform: scale(0.65); /* Escala individual del regalo */
+  }
+
+  /* 3. Torta: Ya no necesita 'left' porque el contenedor la centra */
+  .torta-cumpleaños {
+    transform: scale(0.7);
+    left: 0 !important;
+  }
+
+  /* 4. Mesa: Que sea flexible según el ancho del celular */
+  .soporte {
+    width: 95vw; /* 95% del ancho de la pantalla del móvil */
+    left: 0;
+    margin: 0 auto;
+  }
+
+  /* 5. Vela y Llama: El truco para que NO se muevan de la torta */
+  .vela {
+    left: 50% !important;
+    transform: translateX(-50%) scale(0.75);
+    bottom: 95px; /* Ajuste para que apoye justo en la torta */
+  }
+
+  .llama {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 165px;
+    width: 45px; /* Más grande para que sea fácil de tocar con el dedo */
+    height: 65px;
+  }
+
+  /* 6. Mensaje: Centrado arriba */
+  .happy-birthday {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -180px; /* Lo subimos un poco más */
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+
 /*Evitamos el Resaltado Azul de los Moviles*/
 * {
   -webkit-tap-highlight-color: transparent;
