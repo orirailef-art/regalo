@@ -492,12 +492,13 @@ body {
   position:absolute;
   top:-170px;
   left:50%;
-  transform:translateX(-50%);
   font-size:52px;
   font-family:'Pacifico', cursive;
   color:#3126fa;
   white-space:nowrap;
   z-index:20;
+  margin-left:-190px;
+  animation: brillo 1.5s infinite;
 }
 
 /* Modal */
