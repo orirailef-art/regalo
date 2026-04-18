@@ -44,7 +44,7 @@ function crearConfeti() {
 // 3. Dibujar y Mover Confeti
 //
 function animarConfeti() {
-  ctxConfeti.fillStyle = "rgba(255, 182, 193, 1)"; // Fondo Rosa Pastel
+  ctxConfeti.fillStyle = "rgb(143, 208, 252)"; // Fondo Rosa Pastel
   ctxConfeti.fillRect(0, 0, ancho, alto);
 
   for (let i = 0; i < confetis.length; i++) {
