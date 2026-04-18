@@ -1,47 +1,85 @@
-/* REGALO A */
-const giftA = document.querySelectorAll(".giftA");
+// ===============================
+// REGALOS INDEPENDIENTES
+// ===============================
+
+// Regalo A
+const regaloA = document.querySelectorAll(".giftA");
 const modalA = document.getElementById("modalA");
 
-/* REGALO B */
-const giftB = document.querySelectorAll(".giftB");
+// Regalo B
+const regaloB = document.querySelectorAll(".giftB");
 const modalB = document.getElementById("modalB");
 
-/* eventos independientes */
-giftA.forEach(obj=>{
-    obj.addEventListener("click",()=>{
+// Abrir Carta A
+regaloA.forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.stopPropagation();
         modalA.classList.add("activo");
     });
 });
 
-giftB.forEach(obj=>{
-    obj.addEventListener("click",()=>{
+// Abrir Carta B
+regaloB.forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.stopPropagation();
         modalB.classList.add("activo");
     });
 });
 
-/* cerrar cartas */
-modalA.addEventListener("click",()=>{
+// Cerrar Carta A
+modalA.addEventListener("click", () => {
     modalA.classList.remove("activo");
 });
 
-modalB.addEventListener("click",()=>{
+// Cerrar Carta B
+modalB.addEventListener("click", () => {
     modalB.classList.remove("activo");
 });
 
-/* vela */
+
+// ===============================
+// TORTA / VELA / MÚSICA
+// ===============================
+
 const overlay = document.querySelector(".overlay");
 const llama = document.querySelector(".llama");
 const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
 
-llama.addEventListener("click",()=>{
+let velaApagada = false;
 
+llama.addEventListener("click", () => {
+
+    if (velaApagada) return;
+    velaApagada = true;
+
+    // sonido soplido
+    soplido.currentTime = 0;
     soplido.play();
 
-    setTimeout(()=>{
-        overlay.classList.add("hidden");
-        cancion.play();
-        llama.style.display="none";
-    },1000);
+    // apagar vela visualmente
+    llama.style.transition = "0.4s";
+    llama.style.transform = "scale(0)";
+    llama.style.opacity = "0";
 
+    // encender escena + música
+    setTimeout(() => {
+        overlay.classList.add("hidden");
+
+        cancion.currentTime = 0;
+        cancion.play();
+
+        llama.style.display = "none";
+    }, 900);
+});
+
+
+// ===============================
+// EVITAR PAUSA SI USUARIO TOCA PÁGINA
+// ===============================
+
+document.addEventListener("click", () => {
+    if (!cancion.paused) {
+        cancion.play();
+    }
 });
