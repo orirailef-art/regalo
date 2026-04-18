@@ -8,66 +8,93 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#b6d4ff;
-font-family:Arial;
+background:rgb(182,212,255);
 }
 
+/* confeti */
+#canvas1,
+#canvas2{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+#canvas1{z-index:0;}
+#canvas2{z-index:8;}
+
+/* estructura */
 .contenedor{
 position:relative;
 display:flex;
 flex-direction:column;
 align-items:center;
+z-index:2;
 }
 
-/* texto */
-.happy-birthday{
-position:absolute;
-top:-120px;
-font-family:'Pacifico',cursive;
-font-size:58px;
-color:#2e2eff;
-z-index:5;
-}
-
-/* objetos arriba de la mesa */
-.escena{
-width:1000px;
+.fila-objetos{
+width:1050px;
 display:flex;
 justify-content:space-evenly;
 align-items:flex-end;
-z-index:2;
+position:relative;
+z-index:3;
+}
+
+/* titulo */
+.happy-birthday{
+position:absolute;
+top:-140px;
+left:50%;
+transform:translateX(-50%);
+font-family:'Pacifico',cursive;
+font-size:56px;
+color:#2b33ff;
+white-space:nowrap;
+text-shadow:0 0 8px rgba(255,255,255,.8),
+0 0 16px rgba(0,0,0,.2);
+animation:flotar 2s infinite ease-in-out;
+z-index:5;
 }
 
 /* mesa */
 .mesa{
-width:1050px;
+width:1100px;
 height:28px;
 background:#555;
 border-radius:30px;
 margin-top:10px;
-z-index:1;
+position:relative;
+z-index:2;
+box-shadow:0 6px 15px rgba(0,0,0,.25);
 }
 
 .pata{
-width:120px;
-height:320px;
+width:130px;
+height:340px;
 background:#555;
 margin-top:-2px;
+border-radius:0 0 20px 20px;
+z-index:1;
 }
 
-/* retratos */
+/* portaretratos */
 .portaretrato{
 display:flex;
 flex-direction:column;
 align-items:center;
+margin-bottom:8px;
 }
 
 .marco{
-width:70px;
-height:70px;
+width:78px;
+height:78px;
 padding:5px;
 background:#bb7d4e;
 border:5px solid #8a5e3c;
+box-shadow:0 6px 12px rgba(0,0,0,.3);
 }
 
 .marco img{
@@ -78,73 +105,152 @@ object-fit:cover;
 
 .soporte-marco{
 width:50px;
-height:15px;
+height:16px;
 background:#8a5e3c;
+margin-top:4px;
+clip-path:polygon(0 0,100% 0,80% 100%,20% 100%);
 }
 
 /* regalos */
 .caja-wrapper{
 transform:scale(.8);
+margin-bottom:6px;
+}
+
+.caja{
+position:relative;
+width:150px;
+height:180px;
 cursor:pointer;
 }
 
+/* base */
 .regalos{
+position:absolute;
+bottom:0;
+left:15px;
 width:120px;
 height:80px;
-background:#fff;
-border-radius:12px;
-position:relative;
+border-radius:16px;
+background:
+linear-gradient(#ff4444,#ff4444) center/30px 100% no-repeat,
+#f3f3f3;
+animation:base 1.5s infinite ease-in-out;
 }
 
+/* tapa */
 .regalo{
-width:130px;
-height:30px;
-background:#eee;
+position:absolute;
+bottom:74px;
+left:8px;
+width:134px;
+height:34px;
 border-radius:10px;
-margin-bottom:-5px;
+background:
+linear-gradient(#ff4444,#ff4444) center/30px 100% no-repeat,
+#ffffff;
+animation:techo 1.5s infinite ease-in-out;
+box-shadow:0 5px 8px rgba(0,0,0,.15);
 }
 
 /* torta */
 .torta-cumpleaños{
 position:relative;
-width:240px;
+width:270px;
 height:220px;
+margin-bottom:6px;
 }
 
 .torta{
 position:absolute;
 bottom:0;
-width:240px;
-height:120px;
-background:#ffe1b8;
-border-radius:25px 25px 0 0;
+width:270px;
+height:140px;
+background:#fde8c8;
+border-radius:28px 28px 0 0;
+overflow:hidden;
 }
 
+.torta:before{
+content:"";
+position:absolute;
+top:70px;
+width:100%;
+height:14px;
+background:#ff8f8f;
+box-shadow:0 32px #ff8f8f;
+}
+
+.torta:after{
+content:"";
+position:absolute;
+top:0;
+width:100%;
+height:38px;
+background:#ff5f5f;
+}
+
+.chocolate{
+position:absolute;
+top:24px;
+left:0;
+width:25px;
+height:45px;
+background:#ff5f5f;
+border-radius:50px;
+box-shadow:
+25px 2px #fde8c8,
+50px -8px #ff5f5f,
+75px -4px #fde8c8,
+100px 2px #ff5f5f,
+125px 0 #fde8c8,
+150px -5px #ff5f5f,
+175px 2px #fde8c8,
+200px -5px #ff5f5f,
+225px -10px #fde8c8,
+250px 4px #ff5f5f;
+}
+
+/* vela */
 .vela{
 position:absolute;
-bottom:120px;
-left:112px;
-width:15px;
-height:65px;
+bottom:140px;
+left:127px;
+width:16px;
+height:68px;
 background:#fff;
+box-shadow:inset 0 -10px #ff6f61;
 }
 
+.vela:before{
+content:"";
+position:absolute;
+top:10px;
+width:16px;
+height:15px;
+background:#ff6f61;
+box-shadow:0 25px #ff6f61;
+}
+
+/* llama */
 .llama{
 position:absolute;
-bottom:185px;
-left:107px;
-width:25px;
-height:35px;
+bottom:208px;
+left:122px;
+width:26px;
+height:36px;
 border-radius:50%;
-background:orange;
+background:radial-gradient(circle at bottom,#fff8a0 0%,orange 45%,orangered 80%);
 cursor:pointer;
+animation:llama .15s infinite alternate;
+z-index:9;
 }
 
 /* modales */
 .modal-carta{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.8);
+background:rgba(0,0,0,.82);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -160,23 +266,65 @@ pointer-events:auto;
 }
 
 .carta{
-background:#fff0f5;
-padding:30px;
-border-radius:14px;
-width:420px;
-max-width:80%;
-text-align:center;
+background:linear-gradient(135deg,#fff0f5,#ffd8e6);
+padding:32px;
+border-radius:18px;
+width:430px;
+max-width:82%;
+font-family:Georgia,serif;
+box-shadow:0 0 25px rgba(255,182,193,.55);
+animation:aparecer .5s ease;
 }
 
+.carta h2{
+text-align:center;
+color:#ff5c8a;
+margin-top:0;
+font-size:30px;
+}
+
+.carta p{
+font-size:18px;
+line-height:1.5;
+color:#333;
+}
+
+/* overlay */
 .overlay{
 position:fixed;
 inset:0;
 background:#000;
 z-index:998;
-transition:1s;
+transition:1.5s;
 }
 
 .overlay.hidden{
 opacity:0;
 pointer-events:none;
+}
+
+/* animaciones */
+@keyframes flotar{
+0%,100%{transform:translateX(-50%) translateY(0);}
+50%{transform:translateX(-50%) translateY(-8px);}
+}
+
+@keyframes base{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-5px);}
+}
+
+@keyframes techo{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}
+
+@keyframes llama{
+from{transform:scale(1);}
+to{transform:scale(.9) translateY(2px);}
+}
+
+@keyframes aparecer{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
 }
