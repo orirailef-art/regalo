@@ -500,31 +500,32 @@ body {
 /*Mensaje*/
 .happy-birthday {
     position: absolute;
-    /* Subimos el valor negativo para que esté bien arriba de la torta */
-    top: -200px; 
+    /* Subimos más para que no esté pegado a la torta */
+    top: -220px; 
     
-    /* Centrado absoluto respecto al padre */
-    left: 50%;
-    transform: translateX(-50%);
+    /* Ocupamos todo el ancho del contenedor padre */
+    left: 0;
+    right: 0;
+    width: 100%;
     
-    /* Forzamos que el texto ocupe una sola línea y no tenga espacios extra */
-    white-space: nowrap;
+    /* Centramos el texto dentro de ese 100% */
+    text-align: center;
+    
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    color: #ff4d6d; 
+    
+    /* Evitamos que el texto se rompa o se mueva por padding/margin */
     margin: 0;
     padding: 0;
-    text-align: center;
-
-    font-family: 'Pacifico', cursive;
-    font-size: 70px;
-    color: #ff4d6d; 
+    white-space: nowrap;
     user-select: none;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
     
-    /* Capa superior para que nada lo tape */
-    z-index: 100;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    z-index: 1000; /* Por encima de todo */
 
     animation: flotar 2s ease-in-out infinite,
                brillo 1.5s infinite;
-}
 
 /* Modal */
 .modal-carta {
