@@ -497,111 +497,78 @@ body {
   }
 }
 
-/*Mensaje*/
+/* --- MENSAJE FELIZ CUMPLEAÑOS --- */
 .happy-birthday {
-    position: fixed;      /* Se posiciona respecto a la ventana, no a la mesa */
-    top: 15%;             /* Lo bajamos un 15% desde arriba de la pantalla */
-    left: 50%;            /* Lo movemos al centro horizontal */
-    transform: translateX(-50%); /* Lo centramos exactamente */
-    
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     width: auto;
     text-align: center;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-    user-select: none;
-    z-index: 1000;
-
+    z-index: 100; /* Suficientemente alto pero bajo la llama */
     font-family: 'Pacifico', cursive;
     font-size: 60px;
-    color: #ff4d6d; 
+    color: #ff4d6d;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+    pointer-events: none; /* ESTO ES CLAVE: Permite que el clic pase a través del texto */
+    animation: flotar 2s ease-in-out infinite, brillo 1.5s infinite;
+} /* <-- Aquí faltaba esta llave en tu código */
 
-    animation: flotar 2s ease-in-out infinite,
-               brillo 1.5s infinite;
-/* Modal */
+/* --- MODAL --- */
 .modal-carta {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20000; /* Por encima de la llama y todo lo demás */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
 .modal-carta.activo {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
-/*Carta*/
+/* --- CARTA --- */
 .carta {
-  background: linear-gradient(135deg, #ffeeee, #fbd5e4);
-  padding: 32px;
-  width: 400px;
-  max-width: 80%;
-  border-radius: 12px;
-  border: 3px solid #ffb6c1; 
-  box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
-  font-family: 'Georgia', serif;
-  position: relative;
-  animation: aparecer 0.8s ease;
+    background: linear-gradient(135deg, #ffeeee, #fbd5e4);
+    padding: 32px;
+    width: 400px;
+    max-width: 80%;
+    border-radius: 12px;
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+    font-family: 'Georgia', serif;
+    position: relative;
+    animation: aparecer 0.8s ease;
 }
 
 .carta h2 {
-  font-family: cursive;
-  font-size: 28px;
-  color: #fd7e91; 
-  margin-bottom: 16px;
-  text-align: center;
+    font-family: cursive;
+    font-size: 28px;
+    color: #fd7e91;
+    margin-bottom: 16px;
+    text-align: center;
 }
 
-.carta p {
-  font-size: 17px;
-  line-height: 1.5;
-  color: #333;
-}
-
-.carta .firma {
-  margin-top: 32px;
-  font-style: italic;
-  text-align: right;
-  color: #323232;
-}
-
-/* Animación de entrada */
+/* --- ANIMACIONES --- */
 @keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-/* Animación flotante */
 @keyframes flotar {
-    from, to {
-        transform: translate(0, 0);
-    }
-    50% {
-        transform: translate(0, -8px);
-    }
+    from, to { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -15px); }
 }
 
 @keyframes brillo {
-  from, to {
-    text-shadow: 0 0 3px #fff, 0 0 6px #ff4d6d, 0 0 9px #ff4d6d;
-  }
-  50% {
-    text-shadow: 0 0 6px #fff, 0 0 12px #ff4d6d, 0 0 18px #ff4d6d;
-  }
+    from, to { text-shadow: 0 0 3px #fff, 0 0 6px #ff4d6d; }
+    50% { text-shadow: 0 0 6px #fff, 0 0 15px #ff4d6d; }
 }
 
 /*Confeti Delante*/
