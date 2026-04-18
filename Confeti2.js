@@ -1,10 +1,10 @@
-/ Confeti Adelante
+// Confeti Atrás
 
 window.oncontextmenu = function () {
   return false;
 };
 
-const canvasConfeti2 = document.getElementById("canvas2");
+const canvasConfeti2 = document.getElementById("canvas1");
 const ctxConfeti2 = canvasConfeti2.getContext("2d");
 
 let ancho2 = (canvasConfeti2.width = window.innerWidth);
@@ -13,13 +13,13 @@ let alto2 = (canvasConfeti2.height = window.innerHeight);
 let confetis2 = [];
 
 const coloresConfeti2 = [
-  "rgba(255, 155, 170, 1)",
-  "rgba(224, 130, 144, 1)",
-  "rgba(251, 208, 214, 1)",
-  "rgba(248, 93, 116, 1)",
-  "rgba(246, 121, 139, 1)",
-  "rgba(238, 174, 184, 1)",
+  "rgba(173, 216, 230, 1)",
+  "rgba(135, 206, 250, 1)",
+  "rgb(182, 183, 255)",
   "rgba(255, 255, 255, 1)",
+  "rgba(255, 228, 225, 1)",
+  "rgba(240, 248, 255, 1)",
+  "rgba(176, 224, 230, 1)",
 ];
 
 function crearConfeti2() {
