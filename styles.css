@@ -1,5 +1,5 @@
 html {
-  overflow: hidden; 
+  overflow-x: hidden;
 }
 
 body {
@@ -7,14 +7,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+  min-height: 100vh;
+  margin: 0;
+
   overflow-x: hidden;
-  margin: 20;
 }
 
-/*Confeti Atras*/
+/* Confeti Atras */
 #canvas1 {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   display: block;
@@ -25,20 +27,27 @@ body {
 /*Ajustamos para dejarlo en caida [contendor  de los objetos / mesa]*/
 .contenedor {
   display: flex;
-  flex-direction: column; 
-  align-items: center;    
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100vh;
+  position: relative;
+}
+
+.escena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 /* Portaretrato + torta + caja de regalo */
-.caja-torta-caja {
+.fila-objetos {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
-  width: 520px;
-  gap: 20px;
-  position: center;
-  bottom: -50px;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 /* Mesa */
@@ -76,18 +85,15 @@ body {
 
 .caja-wrapper {
   transform: scale(0.75);
-  transform-origin: center bottom; /* para que se reduzca hacia el centro y desde la base */
+  transform-origin: bottom center;
 }
 
 /*Regalo De Cumpleaños*/
 .caja {
   position: relative;
-  left: 200px;      
-  width: 150px; /* ancho del objeto */
-  height: 180px; /* alto total (caja + cinta + estrellas)*/
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  width: 150px;
+  height: 180px;
+  left: 0; /* importante: elimina desplazamientos viejos */
 }
 
 /* Elementos de la caja */
@@ -159,11 +165,13 @@ body {
 /*Torta De Cumpleaños*/
 .torta-cumpleaños {
   position: relative;
-  width: 274px;  /* mismo ancho que la torta */
-  height: 180px; /* espacio para torta + vela + llama */
+  width: 274px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  transform: scale(0.85);
+  transform-origin: bottom center;
 }
 
 .torta {
