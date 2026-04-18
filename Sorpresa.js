@@ -1,48 +1,39 @@
-// Elementos
+// Carta
+const regalosTapas = document.querySelectorAll(".regalo");
+const regalosBases = document.querySelectorAll(".regalos");
+const modalCarta = document.getElementById("modalCarta");
+
+regalosTapas.forEach(r=>{
+  r.addEventListener("click",()=>{
+    modalCarta.classList.add("activo");
+  });
+});
+
+regalosBases.forEach(r=>{
+  r.addEventListener("click",()=>{
+    modalCarta.classList.add("activo");
+  });
+});
+
+modalCarta.addEventListener("click", () => {
+  modalCarta.classList.remove("activo");
+});
+
+// Todo Oscuro + Soplido + Canción
 const overlay = document.querySelector(".overlay");
-const llama = document.querySelector(".llama");
-const mensaje = document.querySelector(".happy-birthday");
 const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
+const llama = document.querySelector(".llama");
 
-// Lógica de Inicio (Soplido)
 llama.addEventListener("click", () => {
-    soplido.currentTime = 0;
-    soplido.play();
-    
-    // Apagar llama
-    llama.style.animation = "apagar 0.5s forwards";
-    
-    setTimeout(() => {
-        // Mostrar todo
-        overlay.classList.add("hidden");
-        mensaje.style.opacity = "1";
-        
-        // Música
-        cancion.currentTime = 0;
-        cancion.play();
-    }, 1000);
-});
+  soplido.currentTime = 0;
+  soplido.play();
 
-// Lógica de Cajas y Modales
-const envoltorios = document.querySelectorAll('.caja-wrapper');
+  llama.style.animation = "apagar 0.5s forwards"; // forwards -> Ultimo frame (to)
 
-envoltorios.forEach((envoltorio, index) => {
-    envoltorio.addEventListener("click", () => {
-        // index 0 -> Caja 1 -> modalCarta1
-        // index 1 -> Caja 2 -> modalCarta2
-        const idCarta = (index === 0) ? "modalCarta1" : "modalCarta2";
-        const modal = document.getElementById(idCarta);
-        if (modal) modal.classList.add("activo");
-    });
-});
-
-// Cerrar modales al hacer clic afuera
-const modales = document.querySelectorAll('.modal-carta');
-modales.forEach(modal => {
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("activo");
-        }
-    });
+  setTimeout(() => {
+    cancion.currentTime = 0;
+    cancion.play();
+    overlay.classList.add("hidden");
+  }, 1000);
 });
