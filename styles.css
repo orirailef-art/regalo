@@ -508,7 +508,9 @@ body {
     transform: translateX(-50%);
     width: auto;
     text-align: center;
-    z-index: 100; /* Suficientemente alto pero bajo la llama */
+   opacity: 0; /* Empieza invisible */
+    transition: opacity 1s ease;
+    z-index: 6000;
     font-family: 'Pacifico', cursive;
     font-size: 60px;
     color: #ff4d6d;
