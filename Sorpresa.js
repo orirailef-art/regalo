@@ -5,22 +5,19 @@ const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
 
 if (llama) {
-  llama.addEventListener("click", () => {
-    // 1. Sonido de soplido inmediato
-    soplido.currentTime = 0;
+ llama.addEventListener("click", () => {
     soplido.play();
-
-    // 2. Apagar la llama visualmente
     llama.style.animation = "apagar 0.5s forwards";
 
-    // 3. Pequeña pausa dramática antes de que "vuelva la luz" y la música
     setTimeout(() => {
-      overlay.classList.add("hidden"); // Aquí es donde aparece todo
-      cancion.currentTime = 0;
-      cancion.play();
-    }, 800); 
-  });
-}
+        overlay.classList.add("hidden");
+        cancion.play();
+        
+        // Hacemos aparecer el texto justo cuando se "prende la luz"
+        const texto = document.querySelector(".happy-birthday");
+        if (texto) texto.style.opacity = "1";
+    }, 1000);
+});
 
 // --- LÓGICA DE LOS REGALOS Y CARTAS ---
 // Seleccionamos todos los envoltorios de regalos
