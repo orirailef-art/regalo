@@ -270,7 +270,9 @@ body {
 }
 
 .cinta-de-regalo {
-  bottom: 100px; /* ajustado para que quede encima */
+ position: absolute; /* Asegúrate de que tenga position */
+  z-index: 10;        /* <--- Agrega esto para que flote sobre la caja */
+  bottom: 100px; 
   left: calc(50% - 17px);
   width: 34px;
   height: 23px;
