@@ -1,18 +1,14 @@
 // Carta
-const regalosTapas = document.querySelectorAll(".regalo");
-const regalosBases = document.querySelectorAll(".regalos");
+const regalo = document.querySelector(".regalo");
+const regalos = document.querySelector(".regalos");
 const modalCarta = document.getElementById("modalCarta");
 
-regalosTapas.forEach(r=>{
-  r.addEventListener("click",()=>{
-    modalCarta.classList.add("activo");
-  });
+regalo.addEventListener("click", () => {
+  modalCarta.classList.add("activo");
 });
 
-regalosBases.forEach(r=>{
-  r.addEventListener("click",()=>{
-    modalCarta.classList.add("activo");
-  });
+regalos.addEventListener("click", () => {
+  modalCarta.classList.add("activo");
 });
 
 modalCarta.addEventListener("click", () => {
